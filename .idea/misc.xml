@@ -3,10 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/layout/activity_add.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/layout/activity_community.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/layout/activity_guide.xml" value="0.19610507246376813" />
-        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/layout/activity_maps.xml" value="0.176" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_add.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_guide.xml" value="0.2703125" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_maps.xml" value="0.22" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/menu/current_place_menu.xml" value="0.21458333333333332" />
       </map>
     </option>
   </component>
