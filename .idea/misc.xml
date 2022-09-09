@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_add.xml" value="0.264" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/drawable/ic_add_trashbin.xml" value="0.1175" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1175" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_add.xml" value="0.2" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_guide.xml" value="0.2703125" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_maps.xml" value="0.22" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/menu/current_place_menu.xml" value="0.21458333333333332" />
