@@ -1,12 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="248dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginBottom="66dp"
+        android:text="분리수거 가이드"
+        android:textColor="#A9D18E"
+        android:textSize="28sp"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf=""
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.widget.Button
+        android:id="@+id/button"
+        android:layout_width="99dp"
+        android:layout_height="48dp"
+        android:text="뼈"
+
+        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
+        tools:layout_editor_absoluteX="15dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="분리수거 가이드" />
+        android:text="우산"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="128dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="깨진 유리"
+        tools:layout_editor_absoluteX="289dp"
+        tools:layout_editor_absoluteY="128dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="치약"
+        tools:layout_editor_absoluteX="14dp"
+        tools:layout_editor_absoluteY="229dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="스케치북"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="229dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="유리병"
+        tools:layout_editor_absoluteX="289dp"
+        tools:layout_editor_absoluteY="229dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="화분"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="330dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="컵라면 용기"
+        tools:layout_editor_absoluteX="154dp"
+        tools:layout_editor_absoluteY="434dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="의약품"
+        tools:layout_editor_absoluteX="289dp"
+        tools:layout_editor_absoluteY="330dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="에어캡"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="434dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="된장,고추장"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="330dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전단지"
+        tools:layout_editor_absoluteX="289dp"
+        tools:layout_editor_absoluteY="434dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button13"
+        android:layout_width="364dp"
+        android:layout_height="44dp"
+        android:text="고무장갑,고무대야,고무밴드"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="526dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button14"
+        android:layout_width="364dp"
+        android:layout_height="41dp"
+        android:text="다른 재질이 섞인 플라스틱"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="593dp"
+        android:background="@drawable/btn_green"/>
+
+    <android.widget.Button
+        android:id="@+id/button15"
+        android:layout_width="365dp"
+        android:layout_height="38dp"
+        android:text="거울,전구,도자기류,내열식기,유리 뚜껑,크리스탈"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="655dp"
+        android:background="@drawable/btn_green"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
