@@ -18,6 +18,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -44,6 +45,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         GuideButton = findViewById(R.id.floatingActionButton5);
         AddButton = findViewById(R.id.floatingActionButton6);
         CommunityButton = findViewById(R.id.floatingActionButton7);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         GuideButton.setOnClickListener(new View.OnClickListener() {
                @Override
