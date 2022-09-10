@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/drawable/btn_green.xml" value="0.1475" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/drawable/guide_bone.xml" value="0.1475" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/drawable/ic_add_trashbin.xml" value="0.1175" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1175" />
-        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_add.xml" value="0.2" />
-        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_guide.xml" value="0.2703125" />
-        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_maps.xml" value="0.22" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_add.xml" value="0.4" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_community.xml" value="0.12552083333333333" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_guide.xml" value="0.152" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_maps.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/menu/current_place_menu.xml" value="0.21458333333333332" />
       </map>
     </option>
