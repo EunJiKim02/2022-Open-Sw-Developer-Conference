@@ -1,6 +1,7 @@
 package com.gaebalsebal.Find_trashbin;
 
 import static android.content.ContentValues.TAG;
+import static java.lang.Double.parseDouble;
 import static java.lang.Integer.parseInt;
 
 import android.content.Context;
@@ -49,8 +50,8 @@ public class AddActivity extends AppCompatActivity {
                 Map<String, Object> point = new HashMap<>();
 
                 point.put("Name", NameText.getText().toString());
-                point.put("latitude", parseInt(latitudeText.getText().toString()));
-                point.put("longtitude", parseInt(longtitudeText.getText().toString()));
+                point.put("latitude", parseDouble(latitudeText.getText().toString()));
+                point.put("longtitude", parseDouble(longtitudeText.getText().toString()));
 
                 db.collection("point")
                         .add(point)
