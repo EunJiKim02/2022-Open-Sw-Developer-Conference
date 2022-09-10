@@ -20,8 +20,10 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
+        android:backgroundTint="#9DC66D"
         android:clickable="true"
         android:src="@drawable/ic_menu"
+        map:backgroundTint="#9DC66D"
         map:layout_constraintBottom_toBottomOf="parent"
         map:layout_constraintEnd_toEndOf="parent" />
 
@@ -30,8 +32,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="#9DC66D"
         android:clickable="true"
         android:src="@drawable/ic_baseline_delete_24"
+        map:backgroundTint="#9DC66D"
         map:layout_constraintBottom_toTopOf="@+id/floatingActionButton4"
         map:layout_constraintEnd_toEndOf="@+id/floatingActionButton4" />
 
@@ -40,8 +44,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="#9DC66D"
         android:clickable="true"
         android:src="@drawable/ic_add_trashbin"
+        map:backgroundTint="#9DC66D"
         map:layout_constraintBottom_toTopOf="@+id/floatingActionButton5"
         map:layout_constraintEnd_toEndOf="@+id/floatingActionButton5" />
 
@@ -50,8 +56,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="#9DC66D"
         android:clickable="true"
         android:src="@drawable/ic_baseline_chat_24"
+        map:backgroundTint="#9DC66D"
         map:layout_constraintBottom_toTopOf="@+id/floatingActionButton6"
         map:layout_constraintEnd_toEndOf="@+id/floatingActionButton6" />
 
