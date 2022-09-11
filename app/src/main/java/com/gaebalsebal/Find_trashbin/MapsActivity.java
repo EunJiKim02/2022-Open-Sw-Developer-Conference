@@ -1,14 +1,13 @@
 package com.gaebalsebal.Find_trashbin;
 
-
 import static android.content.ContentValues.TAG;
 
 import static java.lang.Integer.parseInt;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
-
 
 import android.Manifest;
 import android.content.Intent;
@@ -16,6 +15,9 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -53,9 +55,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this::onMapReady);
 
-        GuideButton = findViewById(R.id.floatingActionButton5);
-        AddButton = findViewById(R.id.floatingActionButton6);
-        CommunityButton = findViewById(R.id.floatingActionButton7);
+        GuideButton = findViewById(R.id.guide_btn);
+        AddButton = findViewById(R.id.edit_btn);
+        CommunityButton = findViewById(R.id.community_btn);
 
 
         GuideButton.setOnClickListener(new View.OnClickListener() {
