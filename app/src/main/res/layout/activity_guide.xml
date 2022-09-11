@@ -17,7 +17,7 @@
         android:textColor="#A9D18E"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/button"
+        app:layout_constraintBottom_toTopOf="@id/apply"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,25 +25,25 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <android.widget.Button
-        android:id="@+id/button"
+        android:id="@+id/apply"
         android:layout_width="99dp"
         android:layout_height="48dp"
 
         android:layout_marginStart="32dp"
         android:background="@drawable/btn_green"
         android:text="뼈"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
+        app:layout_constraintBaseline_toBaselineOf="@+id/delete"
         app:layout_constraintStart_toStartOf="parent" />
 
     <android.widget.Button
-        android:id="@+id/button2"
+        android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/btn_green"
         android:text="우산"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/apply"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <android.widget.Button
@@ -55,7 +55,7 @@
         android:background="@drawable/btn_green"
         android:text="깨진 유리"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/delete"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.widget.Button
@@ -67,7 +67,7 @@
         android:background="@drawable/btn_green"
         android:text="치약"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/apply" />
 
     <android.widget.Button
         android:id="@+id/button5"
@@ -78,7 +78,7 @@
         android:background="@drawable/btn_green"
         android:text="스케치북"
         app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/delete" />
 
     <android.widget.Button
         android:id="@+id/button6"
