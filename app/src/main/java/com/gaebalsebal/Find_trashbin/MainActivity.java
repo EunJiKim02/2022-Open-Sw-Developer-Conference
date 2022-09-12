@@ -27,11 +27,11 @@ public class MainActivity extends AppCompatActivity {
         edit_btn = (FloatingActionButton) findViewById(R.id.edit_btn);
         community_btn = (FloatingActionButton) findViewById(R.id.community_btn);
 
-        rotateFor = AnimationUtils.loadAnimation(this, R.anim.rotate_open_anim);
-        rotateBack = AnimationUtils.loadAnimation(this, R.anim.rotate_close_anim);
+        rotateFor = AnimationUtils.loadAnimation(this, R.anim.rotate_forward);
+        rotateBack = AnimationUtils.loadAnimation(this, R.anim.rotate_backward);
 
-        fabOpen = AnimationUtils.loadAnimation(this, R.anim.from_bottom_anim);
-        fabClose = AnimationUtils.loadAnimation(this, R.anim.to_bottom_anim);
+        fabOpen = AnimationUtils.loadAnimation(this, R.anim.fab_open);
+        fabClose = AnimationUtils.loadAnimation(this, R.anim.fab_close);
 
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
