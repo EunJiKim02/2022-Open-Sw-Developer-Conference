@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/Yewon Cha/Desktop/openswcon/app/src/main/res/drawable/btn_green.xml" value="0.26" />
         <entry key="..\:/Users/Yewon Cha/Desktop/openswcon/app/src/main/res/drawable/ic_add_trashbin.xml" value="0.211" />
         <entry key="..\:/Users/Yewon Cha/Desktop/openswcon/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1515" />
@@ -21,6 +22,20 @@
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_community.xml" value="0.12552083333333333" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_guide.xml" value="0.152" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_maps.xml" value="0.16799999999999998" />
+=======
+        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/btn_green.xml" value="0.1505" />
+        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/guide_bone.xml" value="0.254" />
+        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/ic_add_trashbin.xml" value="0.255" />
+        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/ic_baseline_chat_24.xml" value="0.255" />
+        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.255" />
+        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/ic_launcher_background.xml" value="0.255" />
+        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/layout/activity_add.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/layout/activity_community.xml" value="0.13854166666666667" />
+        <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/layout/activity_guide.xml" value="0.6" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_add.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_guide.xml" value="0.2703125" />
+        <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_maps.xml" value="0.22" />
+>>>>>>> 2256ee74334895562b49747a7dcf3360603d7aa3
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/menu/current_place_menu.xml" value="0.21458333333333332" />
       </map>
     </option>
@@ -30,5 +45,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>
