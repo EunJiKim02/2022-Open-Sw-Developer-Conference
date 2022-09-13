@@ -70,25 +70,8 @@ public class AddActivity extends AppCompatActivity {
                 exit.setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(AddActivity.this);
-                        builder.setMessage("정말로 종료하시겠습니까?");
-                        builder.setTitle("종료 알림창")
-                                .setCancelable(false)
-                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int i) {
-                                        finish();
-                                    }
-                                })
-                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int i) {
-                                        dialog.cancel();
-                                    }
-                                });
-                        AlertDialog alert = builder.create();
-                        alert.setTitle("종료 알림창");
-                        alert.show();
+                        dialogInterface.dismiss();
+                        finish();
                     }
                 });
                 exit.show();
