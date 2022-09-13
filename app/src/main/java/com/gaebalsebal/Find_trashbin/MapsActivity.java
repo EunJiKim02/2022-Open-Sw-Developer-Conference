@@ -5,11 +5,13 @@ import static android.content.ContentValues.TAG;
 import static java.lang.Integer.parseInt;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,6 +36,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.net.URI;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
@@ -46,6 +51,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     Animation fabOpen, fabClose, rotateFor, rotateBack;
 
     boolean isOpen = false;
+
+    private long backBtnTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +71,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         edit_btn = findViewById(R.id.edit_btn);
         community_btn = findViewById(R.id.community_btn);
         menu_btn = (FloatingActionButton) findViewById(R.id.menu_btn);
+
+
 
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,7 +109,72 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
        }
        );
 
+
+
     }
+
+    @Override
+    public void onBackPressed(){
+        long curTime=System.currentTimeMillis();
+        long gapTime=curTime-backBtnTime;
+
+
+        backBtnTime = curTime;
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
+        builder.setMessage("종료하시겠습니까?");
+        builder.setTitle("종료 알림창")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        dialog.cancel();
+                    }
+                });
+        //AlertDialog alert = builder.create();
+        //alert.setTitle("종료 알림창");
+        builder.show();
+
+
+    }
+    /*public void onBackPressed(){
+        long curTime=System.currentTimeMillis();
+        long gapTime=curTime-backBtnTime;
+
+        if(0<=gapTime && 2000 >=gapTime){
+            super.onBackPressed();
+        }
+        else{
+            backBtnTime=curTime;
+            //Toast.makeText(this,"한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+            public void onClick(View v){
+                AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
+                builder.setMessage("종료하시겠습니까?");
+                builder.setTitle("종료 알림창")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                dialog.cancel();
+                            }
+                        });
+            }
+        }
+    }*/
+
+
 
 
     private void onAddButtonClicked() {
