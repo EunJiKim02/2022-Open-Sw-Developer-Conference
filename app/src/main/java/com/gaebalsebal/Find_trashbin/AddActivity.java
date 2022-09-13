@@ -54,6 +54,7 @@ public class AddActivity extends AppCompatActivity {
                 point.put("Name", NameText.getText().toString());
                 point.put("latitude", parseDouble(latitudeText.getText().toString()));
                 point.put("longtitude", parseDouble(longtitudeText.getText().toString()));
+                point.put("check",false);
 
                 db.collection("point")
                         .add(point)

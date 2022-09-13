@@ -5,11 +5,13 @@ import static android.content.ContentValues.TAG;
 import static java.lang.Integer.parseInt;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -28,9 +31,12 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import java.net.URI;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -38,9 +44,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     double latitude;
     double longitude;
 
-    FloatingActionButton GuideButton;
-    FloatingActionButton AddButton;
-    FloatingActionButton CommunityButton;
+    FloatingActionButton guide_btn;
+    FloatingActionButton edit_btn;
+    FloatingActionButton community_btn, menu_btn;
+
+    Animation fabOpen, fabClose, rotateFor, rotateBack;
+
+    boolean isOpen = false;
+
+    private long backBtnTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,12 +67,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this::onMapReady);
 
-        GuideButton = findViewById(R.id.guide_btn);
-        AddButton = findViewById(R.id.edit_btn);
-        CommunityButton = findViewById(R.id.community_btn);
+        guide_btn = findViewById(R.id.guide_btn);
+        edit_btn = findViewById(R.id.edit_btn);
+        community_btn = findViewById(R.id.community_btn);
+        menu_btn = (FloatingActionButton) findViewById(R.id.menu_btn);
 
 
-        GuideButton.setOnClickListener(new View.OnClickListener() {
+
+        menu_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onAddButtonClicked();
+            }
+        });
+
+        guide_btn.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
                    Intent intent = new Intent(MapsActivity.this, GuideActivity.class);
@@ -69,7 +90,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
            }
         );
 
-        AddButton.setOnClickListener(new View.OnClickListener() {
+        edit_btn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
                Intent intent = new Intent(MapsActivity.this, AddActivity.class);
@@ -79,7 +100,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     );
 
 
-        CommunityButton.setOnClickListener(new View.OnClickListener() {
+        community_btn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
                Intent intent = new Intent(MapsActivity.this, CommunityActivity.class);
@@ -88,6 +109,122 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
        }
        );
 
+
+
+    }
+
+    @Override
+    public void onBackPressed(){
+        long curTime=System.currentTimeMillis();
+        long gapTime=curTime-backBtnTime;
+
+
+        backBtnTime = curTime;
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
+        builder.setMessage("종료하시겠습니까?");
+        builder.setTitle("종료 알림창")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        dialog.cancel();
+                    }
+                });
+        //AlertDialog alert = builder.create();
+        //alert.setTitle("종료 알림창");
+        builder.show();
+
+
+    }
+    /*public void onBackPressed(){
+        long curTime=System.currentTimeMillis();
+        long gapTime=curTime-backBtnTime;
+
+        if(0<=gapTime && 2000 >=gapTime){
+            super.onBackPressed();
+        }
+        else{
+            backBtnTime=curTime;
+            //Toast.makeText(this,"한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+            public void onClick(View v){
+                AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
+                builder.setMessage("종료하시겠습니까?");
+                builder.setTitle("종료 알림창")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int i) {
+                                dialog.cancel();
+                            }
+                        });
+            }
+        }
+    }*/
+
+
+
+
+    private void onAddButtonClicked() {
+        setVisibility(isOpen);
+        setAnimation(isOpen);
+        setClickable(isOpen);
+        isOpen = !isOpen;
+    }
+
+    private void setVisibility(Boolean isOpen){
+        if(!isOpen){
+            guide_btn.setVisibility(View.VISIBLE);
+            edit_btn.setVisibility(View.VISIBLE);
+            community_btn.setVisibility(View.VISIBLE);
+        }
+        else{
+            guide_btn.setVisibility(View.INVISIBLE);
+            edit_btn.setVisibility(View.INVISIBLE);
+            community_btn.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void setAnimation(Boolean isOpen) {
+        if(!isOpen){
+            menu_btn.setAnimation(rotateFor);
+            guide_btn.setAnimation(fabOpen);
+            edit_btn.setAnimation(fabOpen);
+            community_btn.setAnimation(fabOpen);
+        }
+        else
+        {
+            menu_btn.setAnimation(rotateBack);
+            guide_btn.setAnimation(fabClose);
+            edit_btn.setAnimation(fabClose);
+            community_btn.setAnimation(fabClose);
+        }
+    }
+
+    private void setClickable(Boolean isOpen){
+        if(isOpen){
+            guide_btn.setClickable(false);
+            edit_btn.setClickable(false);
+            community_btn.setClickable(false);
+        }
+        else
+        {
+            guide_btn.setClickable(true);
+            edit_btn.setClickable(true);
+            community_btn.setClickable(true);
+        }
     }
 
     public void onMapReady(GoogleMap googleMap) {
@@ -124,8 +261,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                                 LatLng mlatlng = new LatLng((Double) document.getData().get("latitude"), (Double) document.getData().get("longtitude"));
                                 //System.out.println(document.getData().get("Name"));
+<<<<<<< HEAD
 
                                 mMap.addMarker(new MarkerOptions().position(mlatlng).title(String.valueOf(document.get("Name"))));
+=======
+                                if ((Boolean)document.getData().get("check")){
+                                    mMap.addMarker(new MarkerOptions().position(mlatlng).title(String.valueOf(document.get("Name"))));
+                                }
+
+>>>>>>> 98705afab2db72bf1bc0809662fbf3d04825868f
                             }
                         } else {
                             Log.w(TAG, "Error getting documents.", task.getException());
@@ -134,3 +278,116 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 });
         }
     }
+
+
+    /*
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+public class MainActivity extends AppCompatActivity {
+
+    FloatingActionButton menu_btn, guide_btn, edit_btn, community_btn;
+    Animation fabOpen, fabClose, rotateFor, rotateBack;
+
+    boolean isOpen = false;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
+
+        menu_btn = (FloatingActionButton) findViewById(R.id.menu_btn);
+        guide_btn = (FloatingActionButton) findViewById(R.id.guide_btn);
+        edit_btn = (FloatingActionButton) findViewById(R.id.edit_btn);
+        community_btn = (FloatingActionButton) findViewById(R.id.community_btn);
+
+        rotateFor = AnimationUtils.loadAnimation(this, R.anim.rotate_forward);
+        rotateBack = AnimationUtils.loadAnimation(this, R.anim.rotate_backward);
+        fabOpen = AnimationUtils.loadAnimation(this, R.anim.fab_open);
+        fabClose = AnimationUtils.loadAnimation(this, R.anim.fab_close);
+
+        menu_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("hihihihihihihih********************");
+                onAddButtonClicked();
+
+            }
+        });
+        guide_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "baseline_delete_24 clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+        edit_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "add_trashbin clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+        community_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, "baseline_chat_24", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void onAddButtonClicked() {
+        setVisibility(isOpen);
+        setAnimation(isOpen);
+        setClickable(isOpen);
+        isOpen = !isOpen;
+    }
+
+    private void setVisibility(Boolean isOpen){
+        if(!isOpen){
+            guide_btn.setVisibility(View.VISIBLE);
+            edit_btn.setVisibility(View.VISIBLE);
+            community_btn.setVisibility(View.VISIBLE);
+        }
+        else{
+            guide_btn.setVisibility(View.INVISIBLE);
+            edit_btn.setVisibility(View.INVISIBLE);
+            community_btn.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    private void setAnimation(Boolean isOpen) {
+        if(!isOpen){
+            menu_btn.startAnimation(rotateFor);
+            guide_btn.startAnimation(fabOpen);
+            edit_btn.startAnimation(fabOpen);
+            community_btn.startAnimation(fabOpen);
+        }
+        else
+        {
+            menu_btn.startAnimation(rotateBack);
+            guide_btn.startAnimation(fabClose);
+            edit_btn.startAnimation(fabClose);
+            community_btn.startAnimation(fabClose);
+        }
+    }
+
+    private void setClickable(Boolean isOpen){
+        if(!isOpen){
+            guide_btn.setClickable(false);
+            edit_btn.setClickable(false);
+            community_btn.setClickable(false);
+        }
+        else
+        {
+            guide_btn.setClickable(true);
+            edit_btn.setClickable(true);
+            community_btn.setClickable(true);
+        }
+    }
+}*/
