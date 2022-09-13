@@ -124,6 +124,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                                 LatLng mlatlng = new LatLng((Double) document.getData().get("latitude"), (Double) document.getData().get("longtitude"));
                                 //System.out.println(document.getData().get("Name"));
+
                                 mMap.addMarker(new MarkerOptions().position(mlatlng).title(String.valueOf(document.get("Name"))));
                             }
                         } else {
