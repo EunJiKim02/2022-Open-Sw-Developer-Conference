@@ -60,7 +60,7 @@
         android:visibility="invisible"
         map:backgroundTint="#A9D18E"
         map:layout_constraintBottom_toBottomOf="@+id/map"
-        map:layout_constraintEnd_toEndOf="@+id/map" />
+        map:layout_constraintEnd_toEndOf="@+id/map"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/community_btn"
@@ -73,6 +73,7 @@
         android:focusable="true"
         android:src="@drawable/ic_baseline_chat_24"
         android:visibility="invisible"
+
         map:backgroundTint="#A9D18E"
         map:layout_constraintBottom_toBottomOf="@+id/map"
         map:layout_constraintEnd_toEndOf="@+id/map" />
