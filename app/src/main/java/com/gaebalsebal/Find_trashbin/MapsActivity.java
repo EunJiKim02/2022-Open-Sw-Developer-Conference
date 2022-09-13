@@ -140,7 +140,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     private void setClickable(Boolean isOpen){
-        if(!isOpen){
+        if(isOpen){
             guide_btn.setClickable(false);
             edit_btn.setClickable(false);
             community_btn.setClickable(false);
