@@ -5,7 +5,7 @@
     android:id="@+id/guide_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/green"
     tools:context=".MapsActivity">
 
     <!--타이틀-->
@@ -16,6 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:text="분리수거 가이드"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold"/>
     <!--3행 4열-->
@@ -26,6 +27,7 @@
         android:layout_margin="20dp"
         android:columnCount="4"
         android:rowCount="3">
+
         <!--뼈-->
         <androidx.cardview.widget.CardView
             android:id="@+id/button1"
