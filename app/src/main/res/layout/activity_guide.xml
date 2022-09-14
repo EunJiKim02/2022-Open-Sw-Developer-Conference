@@ -1,198 +1,373 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/guide_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
 
+    <!--타이틀-->
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="248dp"
+        android:id="@+id/title_view"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="66dp"
-        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
         android:text="분리수거 가이드"
-        android:textAlignment="center"
-        android:textColor="#A9D18E"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/apply"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+    <!--3행 4열-->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_view"
+        android:layout_margin="20dp"
+        android:columnCount="4"
+        android:rowCount="3">
+        <!--뼈-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button1"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/white"
+            android:scaleType="center"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
 
-    <android.widget.Button
-        android:id="@+id/apply"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        android:layout_marginStart="16dp"
-        android:background="@drawable/btn_green"
-        android:text="뼈"
-        app:layout_constraintBaseline_toBaselineOf="@+id/delete"
-        app:layout_constraintStart_toStartOf="parent" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
 
-    <android.widget.Button
-        android:id="@+id/delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/btn_green"
-        android:text="우산"
-        app:layout_constraintStart_toEndOf="@+id/apply"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    android:src="@drawable/freeiconbone" />
 
-    <android.widget.Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="104dp"
-        android:background="@drawable/btn_green"
-        android:text="깨진 유리"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/delete"
-        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/bone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="뼈"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"></TextView>
 
-    <android.widget.Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/btn_green"
-        android:text="치약"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apply" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    <android.widget.Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/btn_green"
-        android:text="스케치북"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/delete" />
+        <!--우산-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button2"
+            android:scaleType="center"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
 
-    <android.widget.Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btn_green"
-        android:text="유리병"
-        app:layout_constraintStart_toEndOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/umbrella"/>
+                <TextView
+                    android:id="@+id/umbrella"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="우산"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"></TextView>
 
-    <android.widget.Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btn_green"
-        android:text="화분"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--깨진 유리-->
 
-    <android.widget.Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_green"
-        android:text="컵라면 용기"
-        app:layout_constraintStart_toEndOf="@+id/button10"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button3"
+            android:scaleType="center"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
 
-    <android.widget.Button
-        android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_green"
-        android:text="의약품"
-        app:layout_constraintStart_toEndOf="@+id/button11"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/glass"/>
+                <TextView
+                    android:id="@+id/glass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="깨진유리"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"></TextView>
 
-    <android.widget.Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_green"
-        android:text="에어캡"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    <android.widget.Button
-        android:id="@+id/button11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btn_green"
-        android:text="된장,고추장"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        <!--치약-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button4"
+            android:scaleType="center"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
 
-    <android.widget.Button
-        android:id="@+id/button12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_green"
-        android:text="전단지"
-        app:layout_constraintStart_toEndOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/tooth"/>
+                <TextView
+                    android:id="@+id/tooth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="치약"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"></TextView>
 
-    <android.widget.Button
-        android:id="@+id/button13"
-        android:layout_width="364dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/btn_green"
-        android:text="고무장갑,고무대야,고무밴드"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--스케치북-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button5"
+            android:scaleType="center"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
 
-    <android.widget.Button
-        android:id="@+id/button14"
-        android:layout_width="364dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_green"
-        android:text="다른 재질이 섞인 플라스틱"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.34"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button13" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/skech"/>
+                <TextView
+                    android:id="@+id/sketch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="스케치북"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"></TextView>
 
-    <android.widget.Button
-        android:id="@+id/button15"
-        android:layout_width="365dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/btn_green"
-        android:text="거울,전구,도자기류,내열식기,유리 뚜껑,크리스탈"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.326"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button14" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--유리병-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button6"
+            android:scaleType="center"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/bottle"/>
+                <TextView
+                    android:id="@+id/bottle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="유리병"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"></TextView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--화분-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button7"
+            android:scaleType="center"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_row="2"
+            android:layout_rowWeight="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pot"/>
+                <TextView
+                    android:id="@+id/pot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="화분"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--된장,고추장-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button8"
+            android:scaleType="center"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_row="2"
+            android:layout_rowWeight="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/jang"/>
+                <TextView
+                    android:id="@+id/jangjang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="된장,고추장"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <!--의약품-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/button9"
+            android:scaleType="center"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_row="2"
+            android:layout_rowWeight="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_margin="8dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/medicine"/>
+                <TextView
+                    android:id="@+id/medicine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="의약품"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+</RelativeLayout>

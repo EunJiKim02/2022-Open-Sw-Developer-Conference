@@ -13,8 +13,9 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
-        findViewById(R.id.apply).setOnClickListener(this);
-        findViewById(R.id.delete).setOnClickListener(this);
+
+        findViewById(R.id.button1).setOnClickListener(this);
+        findViewById(R.id.button2).setOnClickListener(this);
         findViewById(R.id.button3).setOnClickListener(this);
         findViewById(R.id.button4).setOnClickListener(this);
         findViewById(R.id.button5).setOnClickListener(this);
@@ -22,18 +23,19 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.button7).setOnClickListener(this);
         findViewById(R.id.button8).setOnClickListener(this);
         findViewById(R.id.button9).setOnClickListener(this);
-        findViewById(R.id.button10).setOnClickListener(this);
+        /*findViewById(R.id.button10).setOnClickListener(this);
         findViewById(R.id.button11).setOnClickListener(this);
-        findViewById(R.id.button12).setOnClickListener(this);
-        findViewById(R.id.button13).setOnClickListener(this);
+        findViewById(R.id.button12).setOnClickListener(this);*/
+
+        /* findViewById(R.id.button13).setOnClickListener(this);
         findViewById(R.id.button14).setOnClickListener(this);
-        findViewById(R.id.button15).setOnClickListener(this);
+        findViewById(R.id.button15).setOnClickListener(this);*/
+
     }
-    public void onClick(View v)
-    {
-        switch(v.getId())
-        {
-            case R.id.apply:
+
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button1:
                 new AlertDialog.Builder(this)
                         .setTitle("뼈")
                         .setMessage("일반쓰레기")
@@ -45,7 +47,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
                         })
                         .show();
                 break;
-            case R.id.delete:
+            case R.id.button2:
                 new AlertDialog.Builder(this)
                         .setTitle("우산")
                         .setMessage("✅분리가 어려운 경우:\n우산 전체를 고철류\n✅뼈대:고철류\n✅나머지:일반쓰레기")
@@ -133,7 +135,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
                 new AlertDialog.Builder(this)
                         .setTitle("의약품")
                         .setMessage("✅알약:밀봉되는 봉투에 모아 배출\n✅가루로 된 약:포장지를 뜯지말고 배출\n✅물약: 한 병에 모아 새지 않게 밀봉후 배출\n"
-                        +"연고,안약:겉 종이박스만 분리후 용기째 배출\n📌 반드시 주변 약국,공공시설에 비치된 폐의약품 수거함에 배출")
+                                + "연고,안약:겉 종이박스만 분리후 용기째 배출\n📌 반드시 주변 약국,공공시설에 비치된 폐의약품 수거함에 배출")
                         .setNeutralButton("닫기", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -142,7 +144,10 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
                         })
                         .show();
                 break;
-            case R.id.button10:
+        }
+    }
+}
+                /*case R.id.button10:
                 new AlertDialog.Builder(this)
                         .setTitle("에어캡")
                         .setMessage("✅이물질 묻은 경우:일반쓰레기\n✅이물질 묻지 않은 경우:비닐")
@@ -177,8 +182,9 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
                             }
                         })
                         .show();
-                break;
-            case R.id.button13:
+                break;*/
+
+                /*case R.id.button13:
                 new AlertDialog.Builder(this)
                         .setTitle("고무장갑,고무대야,고무밴드")
                         .setMessage("✅일반쓰레기")
@@ -213,9 +219,6 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
                             }
                         })
                         .show();
-                break;
+                break;*/
 
-        }
-    }
 
-}
