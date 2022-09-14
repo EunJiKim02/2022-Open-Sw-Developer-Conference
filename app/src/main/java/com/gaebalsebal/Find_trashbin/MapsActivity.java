@@ -122,7 +122,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         backBtnTime = curTime;
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MapsActivity.this);
+
         builder.setMessage("종료하시겠습니까?");
+        builder.setIcon(R.mipmap.icon);
         builder.setTitle("종료 알림창")
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
