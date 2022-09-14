@@ -40,12 +40,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -66,6 +68,7 @@ public class CommunityActivity extends AppCompatActivity {
 
     ArrayList<Mypost> dataList = new ArrayList<>();
     ImageButton login_btn;
+    FloatingActionButton post_btn;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     GoogleSignInOptions gso;
@@ -86,6 +89,7 @@ public class CommunityActivity extends AppCompatActivity {
         setContentView(R.layout.activity_community);
 
         login_btn = findViewById(R.id.loginbutton);
+        post_btn = findViewById(R.id.post_button);
         RecyclerView recyclerView = findViewById(R.id.recyclerview);
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
@@ -97,8 +101,9 @@ public class CommunityActivity extends AppCompatActivity {
         MyRecyclerAdapter myRecyclerAdapter = new MyRecyclerAdapter(dataList);
         recyclerView.setAdapter(myRecyclerAdapter);
 
+
         //db에서 데이터 불러오기
-        db.collection("post")
+        db.collection("post").orderBy("time", Query.Direction.DESCENDING)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -159,6 +164,25 @@ public class CommunityActivity extends AppCompatActivity {
 
             }
 
+        });
+
+        post_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(user != null)
+                {
+                    Intent intent = new Intent(CommunityActivity.this, PostActivity.class);
+                    intent.putExtra("user", user);
+                    startActivity(intent);
+
+                }
+                else
+                {
+
+                }
+
+            }
         });
 
 
