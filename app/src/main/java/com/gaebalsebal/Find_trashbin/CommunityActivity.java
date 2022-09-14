@@ -3,19 +3,12 @@ package com.gaebalsebal.Find_trashbin;
 import static android.content.ContentValues.TAG;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -184,10 +177,11 @@ public class CommunityActivity extends AppCompatActivity {
                     .build())
             .build();
 
-
+        Context context = (Context) this;
 
         //로그인 버튼
         login_btn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 if(user == null)
@@ -203,8 +197,16 @@ public class CommunityActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    FirebaseAuth.getInstance().signOut();
-                    user = FirebaseAuth.getInstance().getCurrentUser();
+                    AuthUI.getInstance()
+                            .signOut(context)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+
+                                }
+                            });
+                    user = null;
+                    //user = FirebaseAuth.getInstance().getCurrentUser();
                     updateUI(user);
                 }
 
