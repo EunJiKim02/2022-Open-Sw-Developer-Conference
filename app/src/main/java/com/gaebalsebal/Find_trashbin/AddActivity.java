@@ -42,6 +42,7 @@ public class AddActivity extends AppCompatActivity {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+        String idToken;
 
         Apply.setOnClickListener(new View.OnClickListener() {
             @Override

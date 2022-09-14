@@ -1,26 +1,27 @@
 package com.gaebalsebal.Find_trashbin;
 
 import static android.content.ContentValues.TAG;
-import static java.lang.Double.parseDouble;
-
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.gaebalsebal.Find_trashbin.databinding.ActivityPostBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GetTokenResult;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +30,7 @@ public class PostActivity extends AppCompatActivity {
 
     ActivityPostBinding binding;
     FirebaseUser user;
-
+    FirebaseStorage storage = FirebaseStorage.getInstance("gs://find-trashbin.appspot.com");
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
@@ -42,6 +43,20 @@ public class PostActivity extends AppCompatActivity {
         binding = ActivityPostBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         user =(FirebaseUser) intent.getExtras().get("user");
+        final String[] idToken = new String[1];
+
+        user.getIdToken(true)
+                .addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+                    public void onComplete(@NonNull Task<GetTokenResult> task) {
+                        if (task.isSuccessful()) {
+                            idToken[0] = task.getResult().getToken();
+                            // Send token to your backend via HTTPS
+                            // ...
+                        } else {
+                            // Handle error -> task.getException();
+                        }
+                    }
+                });
 
         binding.postBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +66,7 @@ public class PostActivity extends AppCompatActivity {
                 post.put("time",System.currentTimeMillis());
                 post.put("title", binding.postTitle.getText().toString());
                 post.put("content", binding.editTextTextMultiLine.getText().toString());
-                post.put("userid", user.getEmail());
+                post.put("usertoken", idToken[0]);
 
                 db.collection("post")
                         .add(post)
@@ -77,4 +92,6 @@ public class PostActivity extends AppCompatActivity {
 
 
     }
+
+
 }

@@ -51,6 +51,7 @@
         <activity android:name=".CommunityActivity"></activity>
         <activity android:name=".AddActivity"></activity>
         <activity android:name=".PostActivity"></activity>
+        <activity android:name=".ReadActivity" />
     </application>
 
 </manifest>

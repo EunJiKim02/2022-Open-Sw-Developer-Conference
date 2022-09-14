@@ -8,9 +8,16 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -19,8 +26,10 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.AsyncListDiffer;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.OnScrollListener;
 
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
@@ -50,6 +59,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.auth.FirebaseAppCheckTokenProvider;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -59,7 +69,7 @@ import java.util.List;
 public class CommunityActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    FirebaseUser user;
+    FirebaseUser user = null;
     BeginSignInRequest signInRequest;
     SignInClient oneTapClient;
     GoogleSignInClient googleSignInClient;
@@ -71,6 +81,8 @@ public class CommunityActivity extends AppCompatActivity {
     FloatingActionButton post_btn;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+
+
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
 
@@ -78,6 +90,7 @@ public class CommunityActivity extends AppCompatActivity {
     private static final int REQ_ONE_TAP = 2;  // Can be any integer unique to the Activity.
     private boolean showOneTapUI = true;
     // ...
+
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
@@ -88,18 +101,62 @@ public class CommunityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_community);
 
+
+
         login_btn = findViewById(R.id.loginbutton);
         post_btn = findViewById(R.id.post_button);
-        RecyclerView recyclerView = findViewById(R.id.recyclerview);
+        RecyclerView recycler_View = findViewById(R.id.recyclerview);
+
+
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(this,gso);
 
         //리사이클 뷰 적용
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager((Context)this);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        recycler_View.setLayoutManager(linearLayoutManager);
+
+
+        MyRecyclerAdapter adapter = new MyRecyclerAdapter(dataList);
+
+
+        adapter.setOnItemClickListener(new MyRecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClicked(View v, int position) {
+                Intent intent3 = new Intent(CommunityActivity.this, ReadActivity.class);
+                intent3.putExtra("title", dataList.get(position).title);
+                intent3.putExtra("content", dataList.get(position).content);
+                intent3.putExtra("user", user);
+                startActivity(intent3);
+            }
+        });
+
+
+        recycler_View.setAdapter(adapter);
+
+
+/*
+        adapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                System.out.println("이거 실행은 됨?");
+                Toast.makeText(CommunityActivity.this, "으악", Toast.LENGTH_SHORT).show();
+            }
+        });*/
+/*
         MyRecyclerAdapter myRecyclerAdapter = new MyRecyclerAdapter(dataList);
-        recyclerView.setAdapter(myRecyclerAdapter);
+        myRecyclerAdapter.setOnItemClickListener();
+
+
+
+        myRecyclerAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+        });*/
+
+        updateUI(user);
 
 
         //db에서 데이터 불러오기
@@ -113,12 +170,10 @@ public class CommunityActivity extends AppCompatActivity {
                                 //Log.d(TAG, document.getId() + " => " + document.getData());
                                 String datatitle = (String) document.getData().get("title");
                                 String datacontent = (String) document.getData().get("content");
-                                System.out.println(datatitle + " " + datacontent);
-                                dataList.add(new Mypost(datatitle, datacontent));
-                                //System.out.println(data.title+data.content);
-                                //System.out.println(datalist.get(datalist.size()-1).title);
-                                myRecyclerAdapter.notifyDataSetChanged();
-
+                                String postid = (String) document.getId();
+                                String Token = (String) document.getData().get("userToken");
+                                dataList.add(new Mypost(datatitle, datacontent, postid));
+                                adapter.notifyDataSetChanged();
                             }
 
                         } else {
@@ -126,6 +181,15 @@ public class CommunityActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+
+
+
+/*
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            //Toast.makeText(this, i,Toast.LENGTH_SHORT ).show();
+        }*/
 
 
         signInRequest = BeginSignInRequest.builder()
@@ -179,11 +243,15 @@ public class CommunityActivity extends AppCompatActivity {
                 }
                 else
                 {
+                    Toast.makeText(CommunityActivity.this, "로그인을 먼저 해주세요",
+                            Toast.LENGTH_SHORT).show();
 
                 }
 
             }
         });
+
+
 
 
 
@@ -261,6 +329,7 @@ public class CommunityActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        user = currentUser;
         updateUI(currentUser);
     }
 
@@ -268,7 +337,7 @@ public class CommunityActivity extends AppCompatActivity {
     private void updateUI(FirebaseUser user) { //update ui code here
         TextView username = findViewById(R.id.user_name);
         if (user != null) {
-            username.setText("성공");
+            username.setText(user.getDisplayName());
         }
         else
         {
@@ -279,11 +348,17 @@ public class CommunityActivity extends AppCompatActivity {
 
 }
 
+
+
 //db 데이터 담을 용도
 class Mypost {
-    String title, content;
-    Mypost(String title, String content){
+    String title, content, postid;
+    Mypost(String title, String content, String postid){
         this.title = title;
         this.content = content;
+        this.postid = postid;
     }
 }
+
+
+
