@@ -15,9 +15,9 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="분리수거 가이드"
+        android:text="♻분리수거 가이드♻"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold"/>
     <!--3행 4열-->
     <GridLayout
