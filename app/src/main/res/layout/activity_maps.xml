@@ -19,6 +19,7 @@
         android:id="@+id/menu_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:backgroundTint="#A9D18E"
@@ -33,39 +34,48 @@
         android:id="@+id/guide_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="90dp"
         android:backgroundTint="#A9D18E"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_baseline_delete_24"
+        android:visibility="invisible"
         map:backgroundTint="#A9D18E"
-        map:layout_constraintBottom_toTopOf="@+id/menu_btn"
-        map:layout_constraintEnd_toEndOf="@+id/menu_btn" />
+        map:layout_constraintBottom_toBottomOf="@+id/map"
+        map:layout_constraintEnd_toEndOf="@+id/map" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/edit_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="156dp"
         android:backgroundTint="#A9D18E"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_add_trashbin"
+        android:visibility="invisible"
         map:backgroundTint="#A9D18E"
-        map:layout_constraintBottom_toTopOf="@+id/guide_btn"
-        map:layout_constraintEnd_toEndOf="@+id/guide_btn" />
+        map:layout_constraintBottom_toBottomOf="@+id/map"
+        map:layout_constraintEnd_toEndOf="@+id/map"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/community_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="222dp"
         android:backgroundTint="#A9D18E"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_baseline_chat_24"
+        android:visibility="invisible"
+
         map:backgroundTint="#A9D18E"
-        map:layout_constraintBottom_toTopOf="@+id/edit_btn"
-        map:layout_constraintEnd_toEndOf="@+id/edit_btn" />
+        map:layout_constraintBottom_toBottomOf="@+id/map"
+        map:layout_constraintEnd_toEndOf="@+id/map" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
