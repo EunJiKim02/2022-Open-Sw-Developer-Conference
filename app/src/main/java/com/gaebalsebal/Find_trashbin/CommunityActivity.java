@@ -112,6 +112,7 @@ public class CommunityActivity extends AppCompatActivity {
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(this,gso);
 
+
         //리사이클 뷰 적용
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager((Context)this);
         recycler_View.setLayoutManager(linearLayoutManager);
@@ -123,38 +124,24 @@ public class CommunityActivity extends AppCompatActivity {
         adapter.setOnItemClickListener(new MyRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClicked(View v, int position) {
-                Intent intent3 = new Intent(CommunityActivity.this, ReadActivity.class);
-                intent3.putExtra("title", dataList.get(position).title);
-                intent3.putExtra("content", dataList.get(position).content);
-                intent3.putExtra("user", user);
-                startActivity(intent3);
+                if(user != null){
+                    Intent intent3 = new Intent(CommunityActivity.this, ReadActivity.class);
+                    intent3.putExtra("title", dataList.get(position).title);
+                    intent3.putExtra("content", dataList.get(position).content);
+                    intent3.putExtra("user", user);
+                    startActivity(intent3);
+                }
+                else
+                {
+                    Toast.makeText(CommunityActivity.this, "로그인을 먼저 해주세요",
+                            Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 
 
         recycler_View.setAdapter(adapter);
-
-
-/*
-        adapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                System.out.println("이거 실행은 됨?");
-                Toast.makeText(CommunityActivity.this, "으악", Toast.LENGTH_SHORT).show();
-            }
-        });*/
-/*
-        MyRecyclerAdapter myRecyclerAdapter = new MyRecyclerAdapter(dataList);
-        myRecyclerAdapter.setOnItemClickListener();
-
-
-
-        myRecyclerAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-            }
-        });*/
 
         updateUI(user);
 
@@ -185,12 +172,7 @@ public class CommunityActivity extends AppCompatActivity {
 
 
 
-/*
-        @Override
-        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            //Toast.makeText(this, i,Toast.LENGTH_SHORT ).show();
-        }*/
-
+        //구글 로그인 구현
 
         signInRequest = BeginSignInRequest.builder()
             .setGoogleIdTokenRequestOptions(BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
@@ -204,7 +186,7 @@ public class CommunityActivity extends AppCompatActivity {
 
 
 
-        //로그인 버튼 구현(구글 로그인)
+        //로그인 버튼
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -230,6 +212,7 @@ public class CommunityActivity extends AppCompatActivity {
 
         });
 
+        //게시글 작성 버튼
         post_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
