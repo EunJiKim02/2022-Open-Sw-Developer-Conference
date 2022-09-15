@@ -35,7 +35,7 @@ public class ReadActivity extends AppCompatActivity {
 
         binding.read.setText(content);
         binding.jaemok.setText(title);
-        binding.username.setText(user.getDisplayName());
+        binding.username.setText(user.getDisplayName() + " ( " + user.getEmail() + " ) ");
 
 
 

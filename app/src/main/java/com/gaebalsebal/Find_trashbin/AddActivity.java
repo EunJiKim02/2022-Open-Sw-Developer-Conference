@@ -37,8 +37,8 @@ public class AddActivity extends AppCompatActivity {
         EditText NameText = findViewById(R.id.editTextTextPersonName);
         EditText latitudeText = findViewById(R.id.editTextNumber);
         EditText longtitudeText = findViewById(R.id.editTextNumber2);
-        Button Apply = findViewById(R.id.button1);
-        Button Delete = findViewById(R.id.button2);
+        Button Apply = findViewById(R.id.apply);
+        Button Delete = findViewById(R.id.delete);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
