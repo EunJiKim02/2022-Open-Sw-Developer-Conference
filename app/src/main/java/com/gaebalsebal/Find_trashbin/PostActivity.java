@@ -66,7 +66,8 @@ public class PostActivity extends AppCompatActivity {
                 post.put("time",System.currentTimeMillis());
                 post.put("title", binding.postTitle.getText().toString());
                 post.put("content", binding.editTextTextMultiLine.getText().toString());
-                post.put("usertoken", idToken[0]);
+                post.put("useremail", user.getEmail());
+                post.put("username", user.getDisplayName());
 
                 db.collection("post")
                         .add(post)
