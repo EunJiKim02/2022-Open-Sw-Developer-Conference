@@ -71,7 +71,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
                 {
                     listener.onItemClicked(view, viewHolder.getBindingAdapterPosition());
                 }
-                postid = list.get(viewHolder.getBindingAdapterPosition()).postid;
+                //postid = list.get(viewHolder.getBindingAdapterPosition()).postid;
                 System.out.println(list.get(viewHolder.getBindingAdapterPosition()).content);
                 //Intent intent = new Intent(CommunityActivity.this, PostActivity.class);
                 //intent.putExtra("postdata", postid);

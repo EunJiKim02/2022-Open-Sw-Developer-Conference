@@ -122,6 +122,9 @@ public class CommunityActivity extends AppCompatActivity {
                     intent3.putExtra("title", dataList.get(position).title);
                     intent3.putExtra("content", dataList.get(position).content);
                     intent3.putExtra("user", user);
+                    intent3.putExtra("documentid", dataList.get(position).postId);
+                    intent3.putExtra("email", dataList.get(position).email);
+                    intent3.putExtra("name", dataList.get(position).username);
                     startActivity(intent3);
                 }
                 else
@@ -150,9 +153,10 @@ public class CommunityActivity extends AppCompatActivity {
                                 //Log.d(TAG, document.getId() + " => " + document.getData());
                                 String datatitle = (String) document.getData().get("title");
                                 String datacontent = (String) document.getData().get("content");
-                                String postid = (String) document.getId();
-                                String Token = (String) document.getData().get("userToken");
-                                dataList.add(new Mypost(datatitle, datacontent, postid));
+                                String email = (String) document.getData().get("useremail");
+                                String name = (String) document.getData().get("username");
+                                String Id = (String) document.getId();
+                                dataList.add(new Mypost(datatitle, datacontent, email,Id, name));
                                 adapter.notifyDataSetChanged();
                             }
 
@@ -337,11 +341,13 @@ public class CommunityActivity extends AppCompatActivity {
 
 //db 데이터 담을 용도
 class Mypost {
-    String title, content, postid;
-    Mypost(String title, String content, String postid){
+    String title, content, email, postId, username;
+    Mypost(String title, String content, String email, String postId, String username){
         this.title = title;
         this.content = content;
-        this.postid = postid;
+        this.email = email;
+        this.postId = postId;
+        this.username = username;
     }
 }
 
