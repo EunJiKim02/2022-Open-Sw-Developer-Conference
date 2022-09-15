@@ -1,90 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <GridLayout
+        android:id="@+id/appBarpost"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:rowCount="1"
+        android:columnCount="3">
+
+        <TextView
+            android:id="@+id/textView4post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:textSize="25sp"
+            android:text="커뮤니티"
+            android:paddingEnd="100dp"/>
+
+        <TextView
+            android:id="@+id/user_namepost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:textSize="20sp"
+            android:text="이름"
+            android:paddingEnd="10dp"/>
+
+        <Button
+            android:id="@+id/deletepost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:text="게시글 삭제" />
+
+    </GridLayout>
+
     <TableLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
-        tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="20dp"
-        android:stretchColumns="1,3">
+        android:layout_marginTop="8dp"
+        android:stretchColumns="1,3"
+        app:layout_constraintTop_toBottomOf="@+id/appBarpost"
+        tools:layout_editor_absoluteX="10dp">
 
 
         <TableRow
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/writeuser"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="작성자"
-                android:textStyle="bold"
+                android:background="@drawable/edge"
                 android:gravity="center"
+                android:text="작성자"
                 android:textAlignment="center"
-                android:background="@drawable/edge"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:text="TextView"
-                android:textStyle="bold"
+                android:background="@drawable/edge"
                 android:gravity="center"
+                android:text="TextView"
                 android:textAlignment="center"
-                android:background="@drawable/edge"/>
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/title3"
                 android:layout_width="30dp"
                 android:layout_height="60dp"
-                android:text="제목"
-                android:textStyle="bold"
+                android:background="@drawable/edge"
                 android:gravity="center"
+                android:text="제목"
                 android:textAlignment="center"
-                android:background="@drawable/edge"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/jaemok"
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="TextView"
-                android:textStyle="bold"
+                android:background="@drawable/edge"
                 android:gravity="center"
+                android:text="TextView"
                 android:textAlignment="center"
-                android:background="@drawable/edge"/>
+                android:textStyle="bold" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/naeyong"
                 android:layout_width="wrap_content"
                 android:layout_height="400dp"
-                android:text="내용"
-                android:textStyle="bold"
+                android:background="@drawable/edge"
                 android:gravity="center"
+                android:text="내용"
                 android:textAlignment="center"
-                android:background="@drawable/edge"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/read"
                 android:layout_width="wrap_content"
                 android:layout_height="400dp"
-                android:text="TextView"
+                android:background="@drawable/edge"
                 android:gravity="center"
-                android:textStyle="bold"
+                android:text="TextView"
                 android:textAlignment="center"
-                android:background="@drawable/edge"/>
+                android:textStyle="bold" />
         </TableRow>
 
     </TableLayout>
