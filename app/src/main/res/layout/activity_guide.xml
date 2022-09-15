@@ -55,8 +55,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
 
                     android:src="@drawable/freeiconbone" />
 
@@ -95,8 +95,8 @@
                 android:gravity="center"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/umbrella"/>
                 <TextView
                     android:id="@+id/umbrella"
@@ -133,8 +133,8 @@
                 android:gravity="center"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/glass"/>
                 <TextView
                     android:id="@+id/glass"
@@ -171,8 +171,8 @@
                 android:gravity="center"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/tooth"/>
                 <TextView
                     android:id="@+id/tooth"
@@ -208,8 +208,8 @@
                 android:gravity="center"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/skech"/>
                 <TextView
                     android:id="@+id/sketch"
@@ -245,8 +245,8 @@
                 android:gravity="center"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/bottle"/>
                 <TextView
                     android:id="@+id/bottle"
@@ -282,8 +282,8 @@
                 android:gravity="center"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/pot"/>
                 <TextView
                     android:id="@+id/pot"
@@ -319,8 +319,8 @@
                 android:gravity="center"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/jang"/>
                 <TextView
                     android:id="@+id/jangjang"
@@ -356,8 +356,8 @@
                 android:gravity="center"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:src="@drawable/medicine"/>
                 <TextView
                     android:id="@+id/medicine"
