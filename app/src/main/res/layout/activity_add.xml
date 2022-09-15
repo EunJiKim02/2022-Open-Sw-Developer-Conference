@@ -31,7 +31,7 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="142dp"
         android:layout_marginEnd="45dp"
         android:ems="10"
         android:inputType="textPersonName"
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="153dp"
+        android:layout_marginTop="155dp"
         android:layout_marginEnd="30dp"
         android:text="쓰레기통 위치"
         app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName"
@@ -55,9 +55,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="75dp"
         android:layout_marginTop="57dp"
+        android:layout_marginEnd="55dp"
         android:text="위도"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -77,11 +79,19 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="75dp"
         android:layout_marginTop="60dp"
+<<<<<<< HEAD
     android:text="경도"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/textView" />
+=======
+        android:layout_marginEnd="55dp"
+        android:text="경도"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumber2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+>>>>>>> 2e975a25324cf919ccc02e3039892458bda7f826
 
 <EditText
 android:id="@+id/editTextNumber"

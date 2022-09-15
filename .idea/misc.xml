@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/btn_green.xml" value="0.1505" />
         <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/guide_bone.xml" value="0.254" />
         <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/ic_add_trashbin.xml" value="0.255" />
@@ -18,6 +19,14 @@
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_maps.xml" value="0.22" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_read.xml" value="0.2212475633528265" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/menu/current_place_menu.xml" value="0.21458333333333332" />
+=======
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/layout/activity_add.xml" value="0.3463541666666667" />
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/layout/activity_community.xml" value="0.16134751773049646" />
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/layout/activity_guide.xml" value="0.16134751773049646" />
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/layout/activity_maps.xml" value="0.3496376811594203" />
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2935" />
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2935" />
+>>>>>>> 2e975a25324cf919ccc02e3039892458bda7f826
       </map>
     </option>
   </component>
@@ -26,12 +35,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.264" />
-      </ProjectState>
-    </option>
   </component>
 </project>
