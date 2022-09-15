@@ -51,7 +51,7 @@
         android:layout_width="409dp"
         android:layout_height="729dp"
         tools:layout_editor_absoluteX="10dp"
-        tools:layout_editor_absoluteY="70dp"
+        tools:layout_editor_absoluteY="150dp"
         android:stretchColumns="1,3">
         android:layout_marginTop="8dp"
         android:stretchColumns="1,3"
