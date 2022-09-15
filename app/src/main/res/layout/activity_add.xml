@@ -9,12 +9,10 @@
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#A9D18E"
         android:text="삭제"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/apply"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
 
@@ -22,12 +20,10 @@
         android:id="@+id/apply"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="35dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#A9D18E"
         android:text="등록"
-        app:layout_constraintEnd_toStartOf="@+id/delete"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
 
