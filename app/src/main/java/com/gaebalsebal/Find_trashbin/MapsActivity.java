@@ -72,8 +72,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         community_btn = findViewById(R.id.community_btn);
         menu_btn = (FloatingActionButton) findViewById(R.id.menu_btn);
 
-
-
         menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,7 +97,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
        }
     );
 
-
         community_btn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
@@ -109,15 +106,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
        }
        );
 
-
-
     }
 
     @Override
     public void onBackPressed(){
         long curTime=System.currentTimeMillis();
         long gapTime=curTime-backBtnTime;
-
 
         backBtnTime = curTime;
 
@@ -173,8 +167,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }
     }*/
-
-
 
 
     private void onAddButtonClicked() {
