@@ -47,6 +47,7 @@ public class ReadActivity extends AppCompatActivity {
         String name = intent.getStringExtra("name");
         String Id = intent.getStringExtra("documentid");
 
+        binding.userNamepost.setText(name);
         binding.read.setText(content);
         binding.jaemok.setText(title);
         binding.username.setText( name+" ( " + email + " ) ");

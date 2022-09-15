@@ -3,6 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <entry key="..\:/Users/Yewon Cha/Desktop/openswcon/app/src/main/res/layout/activity_add.xml" value="0.33" />
+        <entry key="..\:/Users/Yewon Cha/Desktop/openswcon/app/src/main/res/layout/activity_community.xml" value="0.28802083333333334" />
+        <entry key="..\:/Users/Yewon Cha/Desktop/openswcon/app/src/main/res/layout/activity_guide.xml" value="0.28802083333333334" />
+        <entry key="..\:/Users/Yewon Cha/Desktop/openswcon/app/src/main/res/layout/activity_maps.xml" value="0.5" />
+        <entry key="..\:/Users/Yewon Cha/Desktop/openswcon/app/src/main/res/layout/activity_post.xml" value="0.28802083333333334" />
+        <entry key="..\:/Users/Yewon Cha/Desktop/openswcon/app/src/main/res/layout/recycler_view.xml" value="0.28802083333333334" />
+=======
+<<<<<<< HEAD
+>>>>>>> 26d65a25cef93b7a5fa4ca08851310e9b9678a28
         <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/btn_green.xml" value="0.1505" />
         <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/edge.xml" value="0.221" />
         <entry key="..\:/Users/chaee/Desktop/sw/app/src/main/res/drawable/guide_bone.xml" value="0.254" />
@@ -18,6 +30,18 @@
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_guide.xml" value="0.2703125" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/layout/activity_maps.xml" value="0.22" />
         <entry key="..\:/Users/eunji/Desktop/SWcontest/app/src/main/res/menu/current_place_menu.xml" value="0.21458333333333332" />
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> cf9211456def84bae233eb8c543639f96afd3c07
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/layout/activity_add.xml" value="0.3463541666666667" />
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/layout/activity_community.xml" value="0.16134751773049646" />
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/layout/activity_guide.xml" value="0.16134751773049646" />
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/layout/activity_maps.xml" value="0.3496376811594203" />
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2935" />
+        <entry key="..\:/swcontest/GaeBalsebal/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2935" />
+>>>>>>> 2e975a25324cf919ccc02e3039892458bda7f826
+>>>>>>> 26d65a25cef93b7a5fa4ca08851310e9b9678a28
       </map>
     </option>
   </component>
