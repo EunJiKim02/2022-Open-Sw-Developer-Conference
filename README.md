@@ -1,10 +1,56 @@
-# GaeBalsebal
-개발세발
+# 2022 공개 SW 개발자 대회
+* Team Name : 개발세발
+* Duration : 
+* Topic :
+* Team Member
+  <table>
+    <tr>
+      <td>#</td>
+      <td>Name</td>
+      <td>Role</td>
+      <td>info</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>김은지</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>김채은</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>노성은</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>문채원</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>차예원</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
 
-이 메모장을 다운 받으셨다면 성공적으로 연결된 것입니다.
 
-floating button 제작
-https://www.youtube.com/watch?v=umCX1-Tq25k
+## Description
+* Project Name :
+* Summary : 
 
-팝업창 띄우기
-https://www.youtube.com/watch?v=SmsshpB1O38
+
+
+## 
+
+
+
+https://www.youtube.com/watch?v=aIJghqjZ7QE
